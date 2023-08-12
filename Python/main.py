@@ -5,13 +5,16 @@ import regularExpression as re
 #        ^ - starts with. ex:- ^abc - given string starts with abc
 #        | - or. ex:- a|b - given string contains a or b
 
-
 if __name__ == '__main__':
-    f = open("test cases/text1.txt", 'r')
-    print("String:", f.readline().strip())
-    print("Pattern:", f.readline())
+    text = open("test cases/text.txt", 'r')
+    pattern = open("test cases/pattern.txt", 'r')
+    output = open("results/patternmatch.output", 'w')
 
-    String = input("Enter String: ")
-    Pattern = input("Enter Pattern: ")
+    String = text.readline().strip()
+    Pattern = pattern.readline().strip()
 
-    print(re.search(String, Pattern))
+    output.writelines(str(re.search(String, Pattern)))
+
+    text.close()
+    pattern.close()
+    output.close()
