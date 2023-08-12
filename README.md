@@ -1,26 +1,26 @@
 # User-Defined Regex
-Implement Regex characters using the Knuth-Morris-Pratt (KMP) string matching algorithm. The solution done by using Python programming language. 
+Implement Regex characters using the Knuth-Morris-Pratt (KMP) string matching algorithm. The solution was done by using the Python programming language. 
 
 <br /><br />
 ## How to run?
-First, go to [python](https://github.com/DasunThathsara/User-defined-Regex/tree/main/Python) folder and find main.py file. This is the code file in this scenario. You can run it using your own test cases and see the output in [results]() folder.  If you want to add new test case, go to the [test cases](https://github.com/DasunThathsara/User-defined-Regex/tree/main/Python/test%20cases) folder and create your own test case file. The test case file has two lines.
+First, go to the [python](https://github.com/DasunThathsara/User-defined-Regex/tree/main/Python) folder and find the main.py file. This is the code file in this scenario. You can run it using your own test cases and open the [results](https://github.com/DasunThathsara/User-defined-Regex/tree/main/Python/results) folder to view the outputs. If you want to add a new test case, go to the [test cases](https://github.com/DasunThathsara/User-defined-Regex/tree/main/Python/test%20cases) folder and create your own test case file. The test case file has two lines.
 
   1. First line: Your string
   2. Second line: Your pattern
 
 <br />
 
-You can change this `text.txt` file to your own text file name.
+You can change this `text.txt` file name to your own text file name.
 ```python
 f = open("test cases/text1.txt", 'r')
 ```
 
-`regularExpression.py` contains the Regex file and main file import the functions in the `regularExpression.py` file.
+`regularExpression.py` contains the Regex file, and the main file imports functions from the `regularExpression.py` file.
 
 <br /><br />
 
 ## Methodology
-I use `Knuth-Morris-Pratt (KMP)` algorithm to implement this and filter the pattern using simple if statements. Also, the matiching condition call the relevant function and give the output as a Boolean value.
+I use the `Knuth-Morris-Pratt (KMP)` algorithm to implement this and filter the pattern using simple if statements. Also, the matiching condition is called to the relevant function, and the output is given as a Boolean value.
 
 ```python
 def search(String, Pattern):
@@ -44,7 +44,7 @@ def search(String, Pattern):
     return kmp(String, Pattern)
 ```
 
-In this version, the program recognice `^` `|` `$` as the regex character.
+In this version, the program recognizes `^` `|` `$` as the regex character.
 
 
 ____
