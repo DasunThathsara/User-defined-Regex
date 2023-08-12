@@ -57,7 +57,7 @@ def ends_with(String, Pattern):
 
 # ---- Find if String starts with Pattern and ends with Pattern ----
 def start_with_and_ends_with(String, Pattern):
-    if kmp(String, "".join(Pattern[1: len(Pattern) - 1])):
+    if kmp(String, "".join(Pattern[1: len(Pattern) - 1])) and len(String) == len(Pattern) - 2:
         return True
     else:
         return False
