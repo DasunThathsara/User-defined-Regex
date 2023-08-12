@@ -1,5 +1,5 @@
 # User-Defined Regex
-Implement Regex characters using the Knuth-Morris-Pratt (KMP) string matching algorithm. The solution was done by using the Python programming language. 
+Implement Regex characters using the Knuth-Morris-Pratt (KMP) string matching algorithm. The solution was done using the Python programming language. 
 
 <br /><br />
 ## How to run?
