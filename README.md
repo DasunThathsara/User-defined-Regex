@@ -17,7 +17,7 @@ output = open("results/patternmatch.output", 'w')
 
 `regularExpression.py` contains the Regex file, and the main file imports functions from the `regularExpression.py` file.
 <br/><br/>
-
+#
 First, import `regularExpression.py` and set the alias to re. Because `regularExpression` is too long and hard to handle.
 ```python
 import regularExpression as re
