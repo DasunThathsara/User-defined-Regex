@@ -52,6 +52,9 @@ def search(String, Pattern):
 
 In this version, the program recognizes `^` `|` `$` as the regex character.
 
+<br><br>
+*If you want to clone and run this code, open the Python folder in your IDE and run. Please use Python 3.9.
+
 
 ____
 <p align="center">
