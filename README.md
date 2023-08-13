@@ -17,9 +17,7 @@ output = open("results/patternmatch.output", 'w')
 
 `regularExpression.py` contains the Regex file, and the main file imports functions from the `regularExpression.py` file.
 
-<br />
 First, import `regularExpression.py` and set the alias to re. Because `regularExpression` is too long and its hard to handle.
-<br />
 ```python
 import regularExpression as re
 ```
