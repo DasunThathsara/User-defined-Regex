@@ -5,10 +5,6 @@ Implement Regex characters using the Knuth-Morris-Pratt (KMP) string matching al
 ## How to run?
 First, go to the [python](https://github.com/DasunThathsara/User-defined-Regex/tree/main/Python) folder and find the main.py file. This is the code file in this scenario. You can run it using your own test cases and open the [results](https://github.com/DasunThathsara/User-defined-Regex/tree/main/Python/results) folder to view the outputs. If you want to add a new test case, go to the [test cases](https://github.com/DasunThathsara/User-defined-Regex/tree/main/Python/test%20cases) folder and create your own test case file. The test case file has two lines.
 
-<br>
-
-  1. First line: Your string
-  2. Second line: Your pattern
 
 <br />
 
