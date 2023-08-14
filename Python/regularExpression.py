@@ -69,11 +69,15 @@ def search(String, Pattern):
         return search(String, Pattern.split('|')[0]) or search(String, Pattern.split('|')[1])
 
     # ---- Find if String starts with Pattern and ends with Pattern ----
+    elif any(i == '?' for i in Pattern):
+        return search(String, Pattern.split('?')[0][-1] + Pattern.split('?')[1][0]) or search(String, Pattern.split('?')[0][-1][:len(Pattern.split('?')[0][-1]) - 1] + Pattern.split('?')[1][0])
+
+    # ---- Find if String starts with Pattern and ends with Pattern ----
     elif Pattern[0] == "^" and Pattern[-1] == "$":
         return start_with_and_ends_with(String, Pattern)
 
     # --------------- Find if String starts with Pattern ---------------
-    if Pattern[0] == "^":
+    elif Pattern[0] == "^":
         return start_with(String, Pattern)
 
     # ---------------- Find if String ends with Pattern ----------------

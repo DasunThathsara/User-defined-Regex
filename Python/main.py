@@ -4,6 +4,7 @@ import regularExpression as re
 #        $ - ends with. ex:- abc$ - given string ends with abc
 #        ^ - starts with. ex:- ^abc - given string starts with abc
 #        | - or. ex:- a|b - given string contains a or b
+#        ? - with or without. ex:- ab?c - given string contains abc or ac
 
 if __name__ == '__main__':
     text = open("test cases/text.txt", 'r')
