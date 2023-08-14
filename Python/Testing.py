@@ -42,18 +42,34 @@ def kmp_search(text, pattern):
 
 
 def regex_search(text, pattern):
-    if pattern.startswith('^'):
+    if '|' in pattern:
+        parts = pattern.split('|')
+        return regex_search(text, parts[0]) or regex_search(text, parts[1])
+
+    elif pattern.startswith('^') and pattern.endswith('$'):
+        matches = kmp_search(text, pattern[1:len(pattern) - 1])
+
+        if 0 in matches:
+            return [0]
+        else:
+            return []
+
+    elif pattern.startswith('^'):
         matches = kmp_search(text, pattern[1:])
-        return [0] if 0 in matches else []
+
+        if 0 in matches:
+            return [0]
+        else:
+            return []
+
     elif pattern.endswith('$'):
         matches = kmp_search(text, pattern[:-1])
-        return [len(text) - len(pattern) + 1] if len(text) - len(pattern) + 1 in matches else []
-    elif '|' in pattern:
-        parts = pattern.split('|')
-        matches = []
-        for part in parts:
-            matches.extend(kmp_search(text, part))
-        return matches
+
+        if len(text) - len(pattern) + 1 in matches:
+            return [len(text) - len(pattern) + 1]
+        else:
+            return []
+
     else:
         return kmp_search(text, pattern)
 
@@ -64,17 +80,19 @@ def search_in_file(file_path, pattern):
 
     output = []
 
-    for line_num, line in enumerate(lines, start=1):
-        matches = regex_search(line, pattern)
+    line_num = 1
+    for line in lines:
+        matches = regex_search(line.strip(), open(pattern, 'r').read().strip())
         if matches:
             output.append(f"Line {line_num}, Position(s): {', '.join(map(str, matches))}")
 
+        line_num += 1
     return output
 
 
 def main():
     file_path = "test cases/text.txt"
-    pattern = input("Enter pattern: ")
+    pattern = "test cases/pattern.txt"
 
     output = search_in_file(file_path, pattern)
 
