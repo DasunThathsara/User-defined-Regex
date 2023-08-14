@@ -34,19 +34,32 @@ def search(String, Pattern):
     if any(i == '|' for i in Pattern):
         return search(String, Pattern.split('|')[0]) or search(String, Pattern.split('|')[1])
 
+
+    # ---- Find if String starts with Pattern and ends with Pattern ----
+    elif any(i == '?' for i in Pattern):
+        if Pattern[-1] == '?':
+            return search(String, Pattern.split('?')[0]) or search(String, Pattern.split('?')[0][:len(Pattern.split('?')[0]) - 1])
+        elif Pattern[0] == '?':
+            return search(String, Pattern.split('?')[1]) or search(String, Pattern.split('?')[1][1:])
+        else:
+            return search(String, Pattern.split('?')[0][-1] + Pattern.split('?')[1][0]) or search(String, Pattern.split('?')[0][-1][:len(Pattern.split('?')[0][-1]) - 1] + Pattern.split('?')[1][0])
+
+
     # ---- Find if String starts with Pattern and ends with Pattern ----
     elif Pattern[0] == "^" and Pattern[-1] == "$":
-        return start_with_and_ends_with(String, Pattern)
+        return kmp(String, "".join(Pattern[1: len(Pattern) - 1])) and len(String) == len(Pattern) - 2
+
 
     # --------------- Find if String starts with Pattern ---------------
     elif Pattern[0] == "^":
-        return start_with(String, Pattern)
+        return kmp(String[: len(Pattern) - 1], "".join(Pattern[1:]))
+
 
     # ---------------- Find if String ends with Pattern ----------------
     elif Pattern[-1] == "$":
-        return ends_with(String, Pattern)
+        return kmp(String[len(String) - len(Pattern) + 1:], "".join(Pattern[0: len(Pattern) - 1])) and search(String, "".join(Pattern[:len(Pattern) - 1]))
 
-    # ----- This part runs if the upper parts was not saticefied -------
+
     return kmp(String, Pattern)
 ```
 
