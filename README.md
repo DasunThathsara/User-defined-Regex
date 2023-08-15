@@ -81,13 +81,4 @@ ____
     <a href="https://github.com/DasunThathsara/User-defined-Regex/actions">
       <img alt="Tests Passing" src="https://github.com/anuraghazra/github-readme-stats/workflows/Test/badge.svg" />
     </a>
-    <a href="https://github.com/DasunThathsara/User-defined-Regex/graphs/contributors">
-      <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/DasunThathsara/User-defined-Regex" />
-    </a>
-    <a href="https://github.com/DasunThathsara/User-defined-Regex/issues">
-      <img alt="Issues" src="https://img.shields.io/github/issues/DasunThathsara/User-defined-Regex?color=0088ff" />
-    </a>
-    <a href="https://github.com/DasunThathsara/User-defined-Regex/pulls">
-      <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/DasunThathsara/User-defined-Regex?color=0088ff" />
-    </a>
   </p>
